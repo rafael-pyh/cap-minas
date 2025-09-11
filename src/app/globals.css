@@ -1,0 +1,175 @@
+@import "tailwindcss";
+
+:root {
+  --background: #fafafa;
+  --foreground: #333333;
+  --light-blue: #6478c8;
+  --dark-blue: #1f1860;
+  --foreground-paragraph: #888888;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: friends;
+}
+
+section {
+  width: 100%;
+  margin: 0 auto;
+  padding: 4em 3.4em;
+}
+
+footer {
+  width: 100%;
+  margin: 0 auto;
+  padding: 2em 3.4em;
+}
+
+header {
+  width: 100%;
+  margin: 0 auto;
+  padding: 1.2em 3.4em;
+}
+
+h1 {
+  margin: 0.5em 0;
+}
+
+h2 {
+  font-size: 2.5rem;
+}
+
+h3 {
+  line-height: 1;
+}
+
+h1, h2, h3 {
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+p, a {
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.15);
+}
+
+button {
+  cursor: pointer;
+  padding: 0.8em 1.3em;
+}
+
+p {
+  color: var(--foreground-paragraph);
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+li {
+  margin: 0.2em 0;
+}
+
+button:hover, a:hover {
+  scale: 1.02;
+  transition: all 0.3s;
+}
+
+.dark-blue {
+  background-color: var(--dark-blue);
+}
+
+.text-blue {
+  color: var(--light-blue);
+}
+
+.text-slate {
+  color: #fafafa;
+}
+
+.text-xlg {
+  font-size: 2.5em;
+}
+
+.text-1-5xl {
+  font-size: 2em;
+}
+
+.bg-white-1 {
+  background-color: #ffffff;
+}
+
+.flex-shrink-0 {
+  flex-shrink: 0;
+}
+
+.flex-grow {
+  flex-grow: 1;
+}
+
+.padding-1 {
+  padding: 0.5rem 1rem;
+}
+
+.padding-b-0 {
+  padding: 4em 4em 0 3.4em;
+}
+
+.padding-y-0 {
+  padding: 0 4em;
+}
+
+.text-green {
+  color: oklch(62.7% 0.194 149.214);
+}
+
+@media screen and (max-width: 768px) {
+  section {
+    padding: 1.2em 1.5em;
+  }
+  footer {
+    padding: 1.2em 1.5em;
+  }
+  header {
+    padding: 1.2em 1em;
+  }
+  h2 {
+    font-size: 2rem;
+  }
+  
+  button {
+    padding: 0.5em 0.8em;
+  }
+  
+  .padding-b-0 {
+    padding: 1.5em 1.5em 0 1.5em;
+  } 
+
+  @layer utilities {
+    @keyframes scroll {
+      0% { transform: translateX(0); }
+      50% { transform: translateX(-1000%); }
+      100% { transform: translateX(0); }
+    }
+    .animate-scroll {
+      display: flex;
+      animation: scroll 90s linear infinite;
+    }
+  }
+}
+
+@layer utilities {
+  @keyframes scroll {
+    0% { transform: translateX(0); }
+    50% { transform: translateX(-100%); }
+    100% { transform: translateX(0); }
+  }
+  .animate-scroll {
+    display: flex;
+    animation: scroll 60s linear infinite;
+  }
+}
