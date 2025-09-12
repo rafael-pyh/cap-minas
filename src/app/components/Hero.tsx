@@ -7,12 +7,12 @@ import { useState } from "react";
 export default function Hero() {
     const [hasPlayedVideo, setHasPlayedVideo] = useState(false);
     return (
-        <section
+        <main
             id="about"
-            className="flex flex-col lg:flex-row md:padding-y-0 justify-between items-stretch w-full h-fit gap-8"
+            className="flex flex-col lg:flex-row padding-b-0 lg:padding-y-0 justify-between items-stretch w-full h-fit gap-8"
             aria-labelledby="hero-heading"
         >
-            <main className="lg:w-1/2 flex flex-col h-stretch justify-end lg:mb-8 gap-2">
+            <div className="lg:w-1/2 flex flex-col h-stretch justify-end lg:mb-8 gap-2">
                 <p className="text-green font-bold flex items-start gap-2 -mb-4">
                     <CircleCheckBig className="w-6 h-6 lg:w-4 lg:h-4" aria-hidden="true" />
                     Nossa média de positivação de marcas é muito superior à do mercado
@@ -28,7 +28,7 @@ export default function Hero() {
                     <Button className="mr-4" cls="primary" aria-label="Conhecer mais sobre os serviços da CAP Minas">Conhecer mais nossos serviços</Button>
                     <Button cls="secondary" aria-label="Entrar em contato com a CAP Minas">Entrar em contato</Button>
                 </div>
-            </main>
+            </div>
             <div className="lg:w-1/2 h-stretch flex items-end">
                 <Carousel
                     setHasPlayedVideo={setHasPlayedVideo}
@@ -48,6 +48,6 @@ export default function Hero() {
                     { type: "image" as const, src: "/carousel/te-vi-pullman-banner.jpeg", alt: "Pullman" },
                 ]} />
             </div>
-        </section>
+        </main>
     );
 }
