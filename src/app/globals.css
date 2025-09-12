@@ -115,6 +115,10 @@ button:hover, a:hover {
   padding: 0.5rem 1rem;
 }
 
+.padding-botton-0 {
+  padding: 4em 4em 0 3.4em;;
+}
+
 .padding-b-0 {
   padding: 0 4em 0 3.4em;
 }
