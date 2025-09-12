@@ -9,15 +9,15 @@ type CarouselItem = {
     src: string;
     alt?: string;
     altSrc?: string;
-    webmSrc?: string;
 };
 
 interface CarouselProps {
     items: CarouselItem[];
+    setHasPlayedVideo: (hasPlayed: boolean) => void;
     interval?: number;
 }
 
-export default function Carousel({ items, interval = 5000 }: CarouselProps) {
+export default function Carousel({ items, setHasPlayedVideo, interval = 5000 }: CarouselProps) {
     const [current, setCurrent] = useState(0);
     const [muted, setMuted] = useState(true);
 
@@ -70,25 +70,27 @@ export default function Carousel({ items, interval = 5000 }: CarouselProps) {
                         <img
                             src={items[current].src}
                             alt={items[current].alt}
-                            className="w-auto h-full max-h-[480px] object-fill rounded-t-2xl"
+                            className="w-auto h-fit max-h-[480px] object-fill rounded-t-2xl"
                             loading="lazy"
                         />
                     ) : (
                         <div className="relative">
                             <video
+                                preload="auto"
                                 ref={videoRef}
                                 controls={false}
                                 autoPlay
                                 muted={muted}
+                                poster="/carousel/thumbnail.png"
                                 aria-label={`Carousel video ${current + 1}`}
-                                className="w-full h-fit max-h-[480px] object-cover rounded-t-2xl"
+                                className="w-full h-full max-h-[480px] object-cover rounded-t-2xl"
                                 onEnded={() => {
+                                    setHasPlayedVideo(true);
                                     nextSlide();
                                 }}
                             >
                                     <source src={items[current].src} type="video/mp4" />
                                     {items[current].altSrc && <source src={items[current].altSrc} type="video/mp4" />}
-                                    {items[current].webmSrc && <source src={items[current].webmSrc} type="video/webm" />}
                                     Seu navegador não suporta vídeo.
                             </video>
                             <button

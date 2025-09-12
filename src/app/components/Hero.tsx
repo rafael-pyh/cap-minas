@@ -1,8 +1,11 @@
+"use client";
 import Button from "./generics/Button";
 import { CircleCheckBig } from "lucide-react";
 import Carousel from "./generics/Carousel";
+import { useState } from "react";
 
 export default function Hero() {
+    const [hasPlayedVideo, setHasPlayedVideo] = useState(false);
     return (
         <section
             id="about"
@@ -27,19 +30,22 @@ export default function Hero() {
                 </div>
             </div>
             <div className="lg:w-1/2 h-stretch flex items-end">
-                <Carousel items={[
-                    // video only in first render
-                    { type: "video", src: "/carousel/institucional-main.mp4", alt: "Vídeo institucional CAP MINAS", altSrc:"/carousel/institucional.mp4", webmSrc:"/carousel/institucional.webm" },
-                    { type: "image", src: "/carousel/artesano-banner.jpeg", alt: "Família Artesano" },
-                    { type: "image", src: "/carousel/bimbo-banner.jpeg", alt: "Familia Bimbo" },
-                    { type: "image", src: "/carousel/bisnaguito-banner.jpeg", alt: "Bisnaguito" },
-                    { type: "image", src: "/carousel/crocantissimo-banner.jpeg", alt: "Crocantíssimo" },
-                    { type: "image", src: "/carousel/familia-artesano-banner.jpeg", alt: "Família Artesano" },
-                    { type: "image", src: "/carousel/nutrella-banner.jpeg", alt: "Nutrella" },
-                    { type: "image", src: "/carousel/pullman-banner.jpeg", alt: "Familia Pullman" },
-                    { type: "image", src: "/carousel/rap10-banner.jpeg", alt: "Rap 10" },
-                    { type: "image", src: "/carousel/takis-banner.jpeg", alt: "Takis" },
-                    { type: "image", src: "/carousel/te-vi-pullman-banner.jpeg", alt: "Pullman" },
+                <Carousel
+                    setHasPlayedVideo={setHasPlayedVideo}
+                    items={[
+                    ...(!hasPlayedVideo ? [
+                        { type: "video" as const, src: "/carousel/institucional-648.mp4", alt: "Vídeo institucional CAP MINAS", altSrc:"/carousel/institucional-720.mp4" }
+                    ] : []),
+                    { type: "image" as const, src: "/carousel/artesano-banner.jpeg", alt: "Família Artesano" },
+                    { type: "image" as const, src: "/carousel/bimbo-banner.jpeg", alt: "Familia Bimbo" },
+                    { type: "image" as const, src: "/carousel/bisnaguito-banner.jpeg", alt: "Bisnaguito" },
+                    { type: "image" as const, src: "/carousel/crocantissimo-banner.jpeg", alt: "Crocantíssimo" },
+                    { type: "image" as const, src: "/carousel/familia-artesano-banner.jpeg", alt: "Família Artesano" },
+                    { type: "image" as const, src: "/carousel/nutrella-banner.jpeg", alt: "Nutrella" },
+                    { type: "image" as const, src: "/carousel/pullman-banner.jpeg", alt: "Familia Pullman" },
+                    { type: "image" as const, src: "/carousel/rap10-banner.jpeg", alt: "Rap 10" },
+                    { type: "image" as const, src: "/carousel/takis-banner.jpeg", alt: "Takis" },
+                    { type: "image" as const, src: "/carousel/te-vi-pullman-banner.jpeg", alt: "Pullman" },
                 ]} />
             </div>
         </section>
