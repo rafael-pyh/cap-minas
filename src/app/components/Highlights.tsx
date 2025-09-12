@@ -14,7 +14,7 @@ export default function Highlights() {
             >
                 Por que contar com a CAP Minas?
             </h2>
-            <ul className="w-full flex flex-col lg:flex-row items-stretch justify-between">
+            <ul className="w-full flex flex-col lg:flex-row items-stretch justify-between gap-4">
                 <li className="lg:w-1/3 flex items-stretch">
                     <Card
                         icon={<TrendingUp aria-hidden="true" />}
