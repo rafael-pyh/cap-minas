@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect, useRef, useCallback } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { MoveLeft, MoveRight, Volume2, VolumeOff } from "lucide-react";
 
@@ -23,9 +23,9 @@ export default function Carousel({ items, setHasPlayedVideo, interval = 5000 }: 
 
     const videoRef = useRef<HTMLVideoElement | null>(null);
 
-    const nextSlide = () => {
+    const nextSlide = useCallback(() => {
         setCurrent((prev) => (prev === items.length - 1 ? 0 : prev + 1));
-    };
+    }, [items.length]);
 
     const prevSlide = () => {
         setCurrent((prev) => (prev === 0 ? items.length - 1 : prev - 1));
@@ -53,7 +53,7 @@ export default function Carousel({ items, setHasPlayedVideo, interval = 5000 }: 
 
             return () => clearTimeout(timer);
         }
-    }, [current, items, interval]);
+    }, [current, items, interval, nextSlide]);
 
     return (
         <div className="relative w-auto max-w-full mx-auto overflow-hidden" aria-roledescription="carousel">
