@@ -99,6 +99,10 @@ button:hover, a:hover {
   font-size: 2em;
 }
 
+.text-1-5rem {
+  font-size: 1.5rem;
+}
+
 .bg-white-1 {
   background-color: #ffffff;
 }
@@ -115,8 +119,8 @@ button:hover, a:hover {
   padding: 0.5rem 1rem;
 }
 
-.padding-botton-0 {
-  padding: 4em 4em 0 3.4em;;
+.padding-bottom-0 {
+  padding: 4em 4em 0 3.4em;
 }
 
 .padding-b-0 {

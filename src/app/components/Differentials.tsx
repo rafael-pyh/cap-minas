@@ -8,7 +8,7 @@ export default function Differentials() {
             aria-labelledby="differentials-heading"
         >   
         <div className="lg:w-5/12">
-            <h2 id="differentials-heading" className="text-2xl font-bold">A CAP MINAS conta com diversos diferenciais, como</h2>
+            <h2 id="differentials-heading" className="text-1-5xl font-bold">A CAP MINAS conta com diversos diferenciais, como</h2>
 
         </div>
             <ul className="w-full flex flex-col lg:flex-row items-stretch justify-between">
