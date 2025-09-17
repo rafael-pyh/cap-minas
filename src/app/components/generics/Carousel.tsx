@@ -13,11 +13,10 @@ type CarouselItem = {
 
 interface CarouselProps {
     items: CarouselItem[];
-    setHasPlayedVideo: (hasPlayed: boolean) => void;
     interval?: number;
 }
 
-export default function Carousel({ items, setHasPlayedVideo, interval = 5000 }: CarouselProps) {
+export default function Carousel({ items, interval = 5000 }: CarouselProps) {
     const [current, setCurrent] = useState(0);
     const [muted, setMuted] = useState(true);
 
@@ -85,7 +84,6 @@ export default function Carousel({ items, setHasPlayedVideo, interval = 5000 }: 
                                 aria-label={`Carousel video ${current + 1}`}
                                 className="w-full h-full max-h-[480px] object-cover rounded-t-2xl"
                                 onEnded={() => {
-                                    setHasPlayedVideo(true);
                                     nextSlide();
                                 }}
                             >

@@ -1,11 +1,8 @@
-"use client";
 import Button from "./generics/Button";
 import { CircleCheckBig } from "lucide-react";
 import Carousel from "./generics/Carousel";
-import { useState } from "react";
 
 export default function Hero() {
-    const [hasPlayedVideo, setHasPlayedVideo] = useState(false);
     return (
         <main
             id="about"
@@ -21,9 +18,9 @@ export default function Hero() {
                     id="hero-heading"
                     className="text-3xl md:text-5xl font-bold"
                 >
-                    Há mais de 30 anos distribuindo com logística ágil e eficiente
+                    Com décadas de tradição sólida, somos referência em distribuição de qualidade em Minas Gerais.
                 </h1>
-                <p className="text-xl">Somos sinônimo de experiência e confiança e temos uma distribuição robusta para mais de 200 municípios.</p>
+                <p className="text-xl">Somos sinônimo de distribuição ágil e confiável em mais de 100 municípios mineiros, com a credibilidade que o mercado reconhece.</p>
                 <div className="mt-4 flex gap-4">
                     <Button className="mr-4" cls="primary" aria-label="Conhecer mais sobre os serviços da CAP Minas">Conhecer mais nossos serviços</Button>
                     <Button cls="secondary" aria-label="Entrar em contato com a CAP Minas">Entrar em contato</Button>
@@ -31,11 +28,7 @@ export default function Hero() {
             </div>
             <div className="lg:w-1/2 h-stretch flex items-end">
                 <Carousel
-                    setHasPlayedVideo={setHasPlayedVideo}
                     items={[
-                    ...(!hasPlayedVideo ? [
-                        { type: "video" as const, src: "/carousel/institucional-648.mp4", alt: "Vídeo institucional CAP MINAS", altSrc:"/carousel/institucional-720.mp4" }
-                    ] : []),
                     { type: "image" as const, src: "/carousel/artesano-banner.jpeg", alt: "Família Artesano" },
                     { type: "image" as const, src: "/carousel/bimbo-banner.jpeg", alt: "Familia Bimbo" },
                     { type: "image" as const, src: "/carousel/bisnaguito-banner.jpeg", alt: "Bisnaguito" },
@@ -46,6 +39,12 @@ export default function Hero() {
                     { type: "image" as const, src: "/carousel/rap10-banner.jpeg", alt: "Rap 10" },
                     { type: "image" as const, src: "/carousel/takis-banner.jpeg", alt: "Takis" },
                     { type: "image" as const, src: "/carousel/te-vi-pullman-banner.jpeg", alt: "Pullman" },
+                    { type: "image", src: "/carousel/IGR_1.jpg", alt: "Colaboradores Cap Minas" },
+                    { type: "image", src: "/carousel/IGR_2.jpg", alt: "Segurando produto Takis" },
+                    { type: "image", src: "/carousel/IGR_3.jpg", alt: "Segurando produto Takis" },
+                    { type: "image", src: "/carousel/IGR_4.jpg", alt: "Colaboradores segurando produto Takis" },
+                    { type: "image", src: "/carousel/IGR_5.jpg", alt: "Colaboradores segurando produto Ana Maria" },
+                    { type: "image", src: "/carousel/IGR_6.jpg", alt: "Pão Pullman e Bisnaguito" },
                 ]} />
             </div>
         </main>

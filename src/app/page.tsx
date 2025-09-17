@@ -28,10 +28,8 @@ export default function Home() {
             { src: "/logos/artesano-logo.png", name: "Artesano", url: "https://www.bimbobrasil.com.br/" },
             { src: "/logos/crocantissimo-logo.png", name: "Crocantíssimo", url: "https://www.bimbobrasil.com.br/" },
             { src: "/logos/pinguinos-logo.png", name: "Pinguinos", url: "https://www.bimbobrasil.com.br/" },
-            { src: "/logos/plusvita-logo.png", name: "Plus Vita", url: "https://www.bimbobrasil.com.br/" }, 
             { src: "/logos/rap10-logo.png", name: "Rap 10", url: "https://www.bimbobrasil.com.br/" },
             { src: "/logos/takis-logo.png", name: "Takis", url: "https://www.bimbobrasil.com.br/" },
-            { src: "/logos/tradicao-logo.png", name: "Tradição", url: "https://www.bimbobrasil.com.br/" },
           ]
         } 
       />
