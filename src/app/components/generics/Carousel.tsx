@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect, useRef, useCallback } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { MoveLeft, MoveRight, Volume2, VolumeOff } from "lucide-react";
 
@@ -9,7 +9,6 @@ type CarouselItem = {
     src: string;
     alt?: string;
     altSrc?: string;
-    webmSrc?: string;
 };
 
 interface CarouselProps {
@@ -23,9 +22,9 @@ export default function Carousel({ items, interval = 5000 }: CarouselProps) {
 
     const videoRef = useRef<HTMLVideoElement | null>(null);
 
-    const nextSlide = () => {
+    const nextSlide = useCallback(() => {
         setCurrent((prev) => (prev === items.length - 1 ? 0 : prev + 1));
-    };
+    }, [items.length]);
 
     const prevSlide = () => {
         setCurrent((prev) => (prev === 0 ? items.length - 1 : prev - 1));
@@ -53,7 +52,7 @@ export default function Carousel({ items, interval = 5000 }: CarouselProps) {
 
             return () => clearTimeout(timer);
         }
-    }, [current, items, interval]);
+    }, [current, items, interval, nextSlide]);
 
     return (
         <div className="relative w-auto max-w-full mx-auto overflow-hidden" aria-roledescription="carousel">
@@ -70,25 +69,26 @@ export default function Carousel({ items, interval = 5000 }: CarouselProps) {
                         <img
                             src={items[current].src}
                             alt={items[current].alt}
-                            className="w-auto h-full max-h-[480px] object-fill rounded-t-2xl"
+                            className="w-auto h-fit max-h-[480px] object-fill rounded-t-2xl"
                             loading="lazy"
                         />
                     ) : (
                         <div className="relative">
                             <video
+                                preload="auto"
                                 ref={videoRef}
                                 controls={false}
                                 autoPlay
                                 muted={muted}
+                                poster="/carousel/thumbnail.png"
                                 aria-label={`Carousel video ${current + 1}`}
-                                className="w-full h-fit max-h-[480px] object-cover rounded-t-2xl"
+                                className="w-full h-full max-h-[480px] object-cover rounded-t-2xl"
                                 onEnded={() => {
                                     nextSlide();
                                 }}
                             >
                                     <source src={items[current].src} type="video/mp4" />
                                     {items[current].altSrc && <source src={items[current].altSrc} type="video/mp4" />}
-                                    {items[current].webmSrc && <source src={items[current].webmSrc} type="video/webm" />}
                                     Seu navegador não suporta vídeo.
                             </video>
                             <button

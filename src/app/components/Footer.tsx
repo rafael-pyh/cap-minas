@@ -32,6 +32,7 @@ export default function Footer() {
                     <h4 className="text-2xl md:text-3xl font-medium">Contato</h4>
                     <ul>
                         <li className="flex gap-2"><Phone aria-hidden="true" /> (34) 3030-0247</li>
+                        <li className="flex gap-2"><img src="/wpp.png" alt="whatsapp" width={24} height={24} /> (34) 9 9952-9380</li>
                         <li className="flex gap-2"><Mail aria-hidden="true" /> contato@capminas.net.br</li>
                     </ul>
                 </div>

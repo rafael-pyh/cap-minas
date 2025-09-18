@@ -14,13 +14,13 @@ export default function Highlights() {
             >
                 Por que contar com a CAP Minas?
             </h2>
-            <ul className="w-full flex flex-col lg:flex-row items-stretch justify-between">
+            <ul className="w-full flex flex-col lg:flex-row items-stretch justify-between gap-4">
                 <li className="lg:w-1/3 flex items-stretch">
                     <Card
                         icon={<TrendingUp aria-hidden="true" />}
-                        title={"Fortalecimento de marca"}
-                        description="Temos um excelente merchandising de impacto no ponto de venda, com as melhores campanhas, vendedores e ações de trade marketing."
-                        titleStyle="text-[1.6rem]"
+                        title={"Merchandising e vendas estratégicas"}
+                        description="Criamos ações de trade marketing de impacto e oferecemos vendas personalizadas e estratégicas, unindo boas negociações e campanhas eficientes para o crescimento conjunto de clientes e marcas."
+                        titleStyle="text-[1.5rem]"
                     />
                 </li>
 

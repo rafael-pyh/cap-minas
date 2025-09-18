@@ -1,36 +1,99 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
-## Getting Started
+# CAP Minas - Distribuição e Logística
 
-First, run the development server:
+Aplicação institucional da CAP Minas, empresa referência em distribuição de alimentos e bebidas, com atuação em mais de 200 municípios de Minas Gerais. Desenvolvida com Next.js, React, Tailwind CSS e TypeScript.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+## Sumário
+
+- [Visão Geral](#visão-geral)
+- [Principais Funcionalidades](#principais-funcionalidades)
+- [Tecnologias Utilizadas](#tecnologias-utilizadas)
+- [Instalação e Uso](#instalação-e-uso)
+- [Estrutura de Pastas](#estrutura-de-pastas)
+- [Contato](#contato)
+
+---
+
+## Visão Geral
+
+O site apresenta a CAP Minas, seus diferenciais, áreas de cobertura, marcas parceiras, estrutura logística e formas de contato. O objetivo é fortalecer a presença digital, facilitar o acesso de clientes e parceiros às informações e destacar a excelência em distribuição.
+
+## Principais Funcionalidades
+
+- **Página institucional**: Informações sobre a empresa, missão, diferenciais e áreas de atuação.
+- **Destaques**: Merchandising, marcas líderes, priorização de qualidade.
+- **Marcas Parceiras**: Carrossel animado com logos e links para sites das marcas distribuídas.
+- **Mapa de Cobertura**: Visualização das regiões atendidas em Minas Gerais.
+- **Entregas**: Detalhes sobre frota, rastreamento, armazenamento e eficiência logística.
+- **Diferenciais**: Pontos de venda, atendimento semanal, presença em municípios.
+- **Footer**: Informações institucionais, políticas, contato e redes sociais.
+
+## Tecnologias Utilizadas
+
+- [Next.js](https://nextjs.org/) (v15)
+- [React](https://react.dev/) (v19)
+- [TypeScript](https://www.typescriptlang.org/)
+- [Tailwind CSS](https://tailwindcss.com/) (v4)
+- [Framer Motion](https://www.framer.com/motion/) (animações)
+- [Lucide React](https://lucide.dev/) (ícones)
+- ESLint, PostCSS
+
+## Instalação e Uso
+
+1. **Clone o repositório:**
+	```bash
+	git clone <url-do-repositorio>
+	cd cap-minas
+	```
+2. **Instale as dependências:**
+	```bash
+	npm install
+	# ou
+	yarn install
+	```
+3. **Execute o servidor de desenvolvimento:**
+	```bash
+	npm run dev
+	```
+	Acesse [http://localhost:3000](http://localhost:3000) no navegador.
+
+4. **Build para produção:**
+	```bash
+	npm run build
+	npm start
+	```
+
+## Estrutura de Pastas
+
+```
+src/
+  app/
+	 components/        # Componentes React reutilizáveis
+		generics/        # Botão, Card, Carousel, etc
+	 fonts/             # Fontes customizadas
+	 globals.css        # Estilos globais
+	 layout.tsx         # Layout principal
+	 page.tsx           # Página principal
+public/
+  logos/               # Logos das marcas
+  carousel/            # Imagens e vídeos do carrossel
+  maps/                # Mapas de cobertura
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Scripts
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+- `npm run dev` - Inicia o servidor de desenvolvimento
+- `npm run build` - Build para produção
+- `npm start` - Inicia o servidor em produção
+- `npm run lint` - Executa o ESLint
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Contato
 
-## Learn More
+- **Telefone:** (34) 3030-0247
+- **E-mail:** contato@capminas.net.br
+- **Site:** [https://www.capminas.net.br](https://www.capminas.net.br)
 
-To learn more about Next.js, take a look at the following resources:
+---
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+### Licença
+Este projeto é privado e de uso institucional da CAP Minas.
